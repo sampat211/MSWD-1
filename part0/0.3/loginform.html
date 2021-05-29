@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script type="text/javascript">
+function validate_loginform()
+     {
+       var passw=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+       var user= /^[0-9a-zA-Z-'_]+$/;
+       var pw=document.loginform.password.value;
+       var un=document.loginform.username.value;
+       if(pw.match(passw)) 
+        { }
+    else
+    { 
+    alert('Password must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters');
+    return false;
+    } 
+       if(un.match(user))
+        {}
+       else
+        {
+        alert("Invalid UserName!");
+        return false;
+        }
+         
+}
+</script>
+<body>
+        <div class="loginbox">
+             
+            <h1>Login Here</h1>
+            <img src="C:\Users\DELL\Desktop\part0\0.3\img-1.png" class="avatar">
+            <form name="loginform" action="action.jsp" method="get" onsubmit="return validate_loginform()">
+                <p>Username</p>
+                <input type="text" name= "username" placeholder="Enter Username" required/>
+                <p>Password</p>
+                <input type="Password" name="password" placeholder="Enter Password" required/>
+                <input type="submit" name="submit" value="Login"/><br>
+                
+
+            </form>
+        </div>
+</body>
+
+
+</html>
